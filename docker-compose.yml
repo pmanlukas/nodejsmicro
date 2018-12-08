@@ -16,6 +16,6 @@ services:
     build: ./product-descp-service
     image: pmanlukas/microservice:productdescp
   product-price-service:
-    build: ./product-price-service
+    build: ./product-price-servicecd 
     image: pmanlukas/microservice:productprice
 
