@@ -6,7 +6,40 @@ module.exports = function (options) {
     this.add('role:product,cmd:getProductURL', productURL);
     this.add('role:product,cmd:getProductName', productName);
 
+    //Describe the logic inside the function
+    function productURL(msg, respond) {
 
-    //To DO: add the pattern functions and describe the logic inside the function
+        var myFoundProduct = '';
+        for(var i=0; i <mockData.length;i++ ) {
 
+            if(mockData[i].product_id == msg.productId ){
+                myFoundProduct = i + 1;
+                break;
+            }
+        }
+        if(myFoundProduct){
+            respond(null, { result: mockData[myFoundProduct - 1].product_url});
+        }
+        else {
+            respond(null, { result: ''});
+        }
+
+    }
+    //Describe the logic inside the function
+    function productName(msg, respond) {
+        var myFoundProduct = '';
+        for(var i=0; i <mockData.length;i++ ) {
+
+            if(mockData[i].product_id == msg.productId ){
+                myFoundProduct = i + 1;
+                break;
+            }
+        }
+        if(myFoundProduct){
+            respond(null, { result: mockData[myFoundProduct - 1].product_name});
+        }
+        else {
+            respond(null, { result: ''});
+        }
+    }
 }
