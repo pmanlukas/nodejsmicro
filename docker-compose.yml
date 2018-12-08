@@ -2,7 +2,7 @@ version: '3'
 services:
   server:
     build: ./server
-    image: HUB_ID/microservice:server
+    image: pmanlukas/microservice:server
     ports:
       - "8080:8080"
     depends_on:
@@ -14,8 +14,8 @@ services:
     image: pmanlukas/microservice:hello
   product-descp-service:
     build: ./product-descp-service
-    image: HUB_ID/microservice:productdescp
+    image: pmanlukas/microservice:productdescp
   product-price-service:
     build: ./product-price-service
-    image: HUB_ID/microservice:productprice
+    image: pmanlukas/microservice:productprice
 
